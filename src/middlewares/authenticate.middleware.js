@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-import loggerLog from "../logs/logger.log.js";
 import "dotenv/config";
 
 

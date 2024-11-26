@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import usersController from '../controllers/users.controller.js';
 import {authenticate} from "../middlewares/authenticate.middleware.js";
-import tasksController from "../controllers/tasks.controller.js";
 
 const router = Router();
 router.route('/').get( usersController.getUsers).post(usersController.createUser);
