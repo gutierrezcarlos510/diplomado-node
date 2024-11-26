@@ -1,0 +1,94 @@
+### POST request login
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+  "username": "master",
+  "password": "master"
+}
+> {% client.global.set("auth_token", response.body.token); %}
+
+### GET request listar
+GET http://localhost:3000/api/users
+Authorization: Bearer {{auth_token}}
+
+
+### POST request adicionar
+POST http://localhost:3000/api/users
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "username": "master",
+  "password": "master"
+}
+
+### GET findBy
+GET http://localhost:3000/api/users/7
+Authorization: Bearer {{auth_token}}
+
+### UPDATE
+PUT http://localhost:3000/api/users/3
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "username": "user2",
+  "password": "usermodificado"
+}
+
+### PATCH
+PATCH http://localhost:3000/api/users/2
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "status": "inactive"
+}
+
+### DELETE
+DELETE http://localhost:3000/api/users/3
+Authorization: Bearer {{auth_token}}
+
+### GET findBy task
+GET http://localhost:3000/api/tasks
+Authorization: Bearer {{auth_token}}
+
+### POST task
+POST http://localhost:3000/api/tasks
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "name": "task34"
+}
+
+### GET findBy task
+GET http://localhost:3000/api/tasks/1
+Authorization: Bearer {{auth_token}}
+
+### UPDATE task
+PUT http://localhost:3000/api/tasks/8
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "name": "task8 modificada"
+}
+
+### PATCH task
+PATCH http://localhost:3000/api/tasks/8
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "done": false
+}
+
+### DELETE task
+DELETE http://localhost:3000/api/tasks/1
+Authorization: Bearer {{auth_token}}
+
+### GET findBy task and user
+GET http://localhost:3000/api/users/7/tasks
+Authorization: Bearer {{auth_token}}
